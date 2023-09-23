@@ -1,5 +1,7 @@
 /* No click */
-.no-click{pointer-events: none;}
+.no-click {
+	pointer-events: none;
+}
 
 /* FlowPlay Overlay Button Animation */
 @keyframes pauseIconFadeOut {
