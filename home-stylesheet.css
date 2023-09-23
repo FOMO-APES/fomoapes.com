@@ -1,7 +1,7 @@
-<!-- No click -->
+/* No click */
 .no-click{pointer-events: none;}
 
-<!-- FlowPlay Overlay Button Animation -->
+/* FlowPlay Overlay Button Animation */
 @keyframes pauseIconFadeOut {
     from {
         opacity: 1;
@@ -31,22 +31,22 @@
     animation: playIconFadeIn 0.1s forwards;
 }
 
-<!-- .video-frame Outer Glow -->
+/* .video-frame Outer Glow */
 .video-frame {
     filter: drop-shadow(0 0 100px rgba(255, 0, 0, 0.25));
 }
 
-<!-- .hero-screen Drop Shadow -->
+/* .hero-screen Drop Shadow */
 .hero-screen {
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 
-<!-- FlowPlay Video Wrapper Border Radius -->
+/* FlowPlay Video Wrapper Border Radius */
 .video-wrapper {
   border-radius: 11.25%/20%;
 }
 
-<!-- FlowPlay Volume Slider -->
+/* FlowPlay Volume Slider */
 .slider {
 	-webkit-appearance: none;
 	appearance: none;
@@ -91,12 +91,12 @@
 	height: 100% !important;
 }
 
-<!-- Dropdown Arrow No Select -->
+/* Dropdown Arrow No Select */
 .fs_accordion-2_arrow-wrapper {
 	user-select: none;
 }
 
-<!-- Video End Card Fade In/Out -->
+/* Video End Card Fade In/Out */
 .end-card {
 		box-shadow: inset 0px 0px 20vh 7.5vh #000000;
     opacity: 0;
