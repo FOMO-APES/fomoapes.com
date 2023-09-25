@@ -1,5 +1,5 @@
-/* FAQ Arrow No Select */
-.fs_accordion-2_arrow-wrapper {
+/* No Select */
+.no-select {
     user-select: none;
 }
 
