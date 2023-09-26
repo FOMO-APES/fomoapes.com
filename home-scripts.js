@@ -203,34 +203,44 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Video End Card
 document.addEventListener("DOMContentLoaded", function() {
-  const videoElement = document.querySelector('video');
-  const endCard = document.querySelector('.end-card');
-  const videoPlayOverlay = document.querySelector('.video-play-overlay');
-  const tellMeMoreButton = document.querySelector('.tell-me-more');
-  let isVideoPlaying = false;
-  videoElement.addEventListener('ended', function() {
-    endCard.classList.add('show');
-    videoPlayOverlay.style.display = 'none';
-    isVideoPlaying = false;
-  });
-  videoElement.addEventListener('play', function() {
-    videoPlayOverlay.style.display = 'flex';
-    endCard.classList.remove('show');
-    isVideoPlaying = true;
-  });
-  videoElement.addEventListener('pause', function() {
-    isVideoPlaying = false;
-  });
-  videoPlayOverlay.addEventListener('click', function() {
-    if (isVideoPlaying) {
-      videoElement.pause();
-    } else {
-      videoElement.play();
-    }
-  });
-  endCard.addEventListener('click', function(e) {
-    if (!e.target.isSameNode(tellMeMoreButton)) {
-      videoElement.play();
-    }
-  });
+    const videoElement = document.querySelector('video');
+    const endCard = document.querySelector('.end-card');
+    const videoPlayOverlay = document.querySelector('.video-play-overlay');
+    const tellMeMoreButton = document.querySelector('.tell-me-more');
+    let isVideoPlaying = false;
+
+    videoElement.addEventListener('ended', function() {
+        endCard.classList.add('show');
+        videoPlayOverlay.style.display = 'none';
+        isVideoPlaying = false;
+    });
+
+    videoElement.addEventListener('play', function() {
+        videoPlayOverlay.style.display = 'flex';
+        endCard.classList.remove('show');
+        isVideoPlaying = true;
+    });
+
+    videoElement.addEventListener('pause', function() {
+        isVideoPlaying = false;
+    });
+
+    videoPlayOverlay.addEventListener('click', function() {
+        if (isVideoPlaying) {
+            videoElement.pause();
+        } else {
+            videoElement.play();
+        }
+    });
+
+    endCard.addEventListener('click', function(e) {
+        let target = e.target;
+        while (target != null) {
+            if (target.isSameNode(tellMeMoreButton)) {
+                return;
+            }
+            target = target.parentElement;
+        }
+        videoElement.play();
+    });
 });
