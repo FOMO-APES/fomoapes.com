@@ -244,3 +244,26 @@ document.addEventListener("DOMContentLoaded", function() {
         videoElement.play();
     });
 });
+
+// Pop Up No Scroll
+document.addEventListener("DOMContentLoaded", function() {
+    const noScrollElements = document.querySelectorAll('.no-scroll'); // Select all elements with the .no-scroll class
+    const body = document.body;
+    
+    const observer = new MutationObserver(mutationsList => {
+        for(const mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                const elementStyle = window.getComputedStyle(mutation.target);
+                if(elementStyle.display === 'flex') {
+                    body.style.overflow = 'hidden'; // Disable scrolling
+                } else if(elementStyle.display === 'none') {
+                    body.style.overflow = ''; // Enable scrolling
+                }
+            }
+        }
+    });
+    
+    noScrollElements.forEach(element => {
+        observer.observe(element, { attributes: true }); // Observe changes to the style attribute
+    });
+});
