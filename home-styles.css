@@ -103,7 +103,7 @@
 
 /* Video End Card Fade In/Out */
 .end-card {
-		box-shadow: inset 0px 0px 20vh 7.5vh #000000;
+    box-shadow: inset 0px 0px 20vh 7.5vh #000000;
     opacity: 0;
     visibility: hidden;
     transition: opacity 50ms, visibility 50ms;
