@@ -46,11 +46,6 @@
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 
-/* FlowPlay Video Wrapper Border Radius */
-.video-wrapper {
-  border-radius: 15%/25%;
-}
-
 /* FlowPlay Volume Slider */
 .slider {
 	-webkit-appearance: none;
